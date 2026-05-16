@@ -23,9 +23,10 @@
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--s-4);
   min-height: var(--nav-h);
+  position: relative;
 }
 .nav__brand {
   display: flex;
@@ -36,8 +37,12 @@
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 500;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.nav__brand img { height: 22px; width: auto; }
+.nav__brand img { height: 56px; width: auto; display: block; }
 .nav__brand span em {
   font-family: var(--f-text);
   font-style: italic;
@@ -96,6 +101,13 @@
 
 @media (min-width: 900px) {
   .nav__toggle { display: none; }
+  .nav__inner { justify-content: space-between; }
+  .nav__brand {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
   .nav__menu {
     position: static;
     background: transparent;
