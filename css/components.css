@@ -181,6 +181,15 @@
   margin: var(--s-2) 0 var(--s-3);
 }
 .stylist__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.stylist__signoff {
+  font-family: var(--f-text);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--c-sienna);
+  margin: var(--s-2) 0 var(--s-4);
+  letter-spacing: 0.01em;
+}
+.stylist__signoff em { font-weight: 500; font-style: italic; }
 
 @media (min-width: 600px) {
   .stylist { grid-template-columns: 110px 1fr; padding: var(--s-6); }
@@ -285,3 +294,114 @@
 .reveal.delay-2 { transition-delay: 160ms; }
 .reveal.delay-3 { transition-delay: 240ms; }
 .reveal.delay-4 { transition-delay: 320ms; }
+
+/* =========================================================
+   Mobile (< 900px) — flatten cards, line-based composition
+   ========================================================= */
+@media (max-width: 899px) {
+
+  /* Services collapse from cards to a single price list */
+  .services {
+    border-top: 1px solid var(--c-line);
+    gap: 0;
+  }
+  .service {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--c-line);
+    border-radius: 0;
+    padding: var(--s-4) var(--s-2);
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name price";
+    align-items: baseline;
+    column-gap: var(--s-4);
+    row-gap: 0;
+  }
+  .service:hover { transform: none; box-shadow: none; border-color: var(--c-line); }
+  .service__index,
+  .service__desc { display: none; }
+  .service__name {
+    grid-area: name;
+    font-family: var(--f-text);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: left;
+  }
+  .service__name em {
+    font-family: var(--f-text);
+    color: var(--c-sienna);
+    font-style: italic;
+  }
+  .service__row {
+    grid-area: price;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+  .service__price {
+    font-family: var(--f-text);
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--c-ink);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Stylist — centered avatar over centered text */
+  .stylist {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    padding: var(--s-6) var(--s-5);
+    gap: var(--s-3);
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+  .stylist__avatar { margin: 0 auto var(--s-2); }
+  .stylist__bio { max-width: 32ch; margin-inline: auto; }
+  .stylist__tags { justify-content: center; }
+
+  /* Visit blocks — borderless, centered, hairline divider between */
+  .visit { gap: var(--s-7); }
+  .visit__block {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+  .visit__block h3 {
+    font-family: var(--f-text);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(26px, 7vw, 32px);
+    color: var(--c-ink);
+  }
+  .visit__block h3 em { color: var(--c-sienna); }
+  .visit__block .meta { text-align: center; }
+  .hours {
+    width: 100%;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+  .hours li { text-align: left; }
+  .address {
+    text-align: center;
+    line-height: 1.7;
+  }
+  .map { width: 100%; max-width: 26rem; margin-inline: auto; }
+
+  /* CTA band — keep, but tighter and centered */
+  .cta { text-align: center; }
+  .cta__actions { justify-content: center; }
+  .cta p { margin-inline: auto; }
+}
