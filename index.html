@@ -61,7 +61,7 @@
       <div class="container hero__inner">
         <div class="hero__copy">
           <h1 class="hero__title reveal delay-1">
-            Kotoisa kampaamo,<br/><em>kiireetön</em> kohtaaminen.
+            <span class="hero__word">Kotoisa</span> <span class="hero__word">kampaamo,</span><br/><span class="hero__word"><em>kiireetön</em></span> <span class="hero__word">kohtaaminen.</span>
           </h1>
 
           <hr class="rule rule--left reveal delay-2" />
@@ -86,8 +86,11 @@
           </div>
         </div>
 
-        <div class="hero__visual reveal delay-2" aria-hidden="true">
-          <span class="tag-float"><span class="dot"></span>Omat rauhalliset tilat</span>
+        <div class="hero__visual reveal delay-2">
+          <img src="assets/Salon.jpeg"
+               alt="COTO Hairin sisätila: pesupaikka, kampausistuin ja iso ikkuna, josta näkyy Kempeleen pientaloalue."
+               width="4032" height="3024" />
+          <span class="tag-float" aria-hidden="true"><span class="dot"></span>Omat rauhalliset tilat</span>
         </div>
       </div>
     </section>
@@ -109,7 +112,11 @@
 
         <div class="stylists">
           <article class="stylist reveal">
-            <div class="stylist__avatar" aria-hidden="true">M</div>
+            <div class="stylist__avatar">
+              <img src="assets/Minna.jpg"
+                   alt="Minna Tulikainen, COTO Hairin parturi-kampaaja."
+                   width="1402" height="2048" loading="lazy" />
+            </div>
             <div class="stylist__body">
               <p class="stylist__role">Perustaja · Parturi-kampaaja</p>
               <h3 class="stylist__name">Minna Tulikainen</h3>
@@ -123,11 +130,6 @@
                 Lämmin ja aito kohtaaminen on kaiken perusta.
               </p>
               <p class="stylist__signoff">Love, <em>Minna</em></p>
-              <div class="stylist__tags">
-                <span class="tag tag--peach">Värjäys</span>
-                <span class="tag">Leikkaus</span>
-                <span class="tag tag--outline">Kampaus</span>
-              </div>
             </div>
           </article>
         </div>
@@ -201,6 +203,16 @@
       </div>
     </section>
 
+    <!-- ===================== EDITORIAL BAND ===================== -->
+    <aside class="editorial-band reveal" aria-hidden="true">
+      <img src="assets/WaitingArea.jpeg"
+           alt=""
+           width="3024" height="4032" loading="lazy" />
+      <blockquote class="editorial-band__quote">
+        Tule muutama minuutti etuajassa —<br/><em>aloitetaan teellä.</em>
+      </blockquote>
+    </aside>
+
     <!-- ===================== VISIT (HOURS + LOCATION) ===================== -->
     <section class="section section--tight" id="visit">
       <div class="container">
@@ -239,7 +251,21 @@
               <a href="tel:+358401234567">+358 40 123 4567</a> ·
               <a href="mailto:minna@cotohair.fi">minna@cotohair.fi</a>
             </address>
-            <div class="map" role="img" aria-label="Kartta: COTO Hair kotikampaamo Kempeleessä"></div>
+            <figure class="location-photo">
+              <img src="assets/House.jpeg"
+                   alt="COTO Hair -kotikampaamon ulkokuva: tumma talo, jonka pihalla coto-kyltti."
+                   width="1330" height="1183" loading="lazy" />
+              <figcaption>Etsi tumma talo numero 20 — pihalla <em>coto</em>-kyltti.</figcaption>
+            </figure>
+
+            <div class="location-map">
+              <iframe
+                title="Kartta: COTO Hair Kempeleessä"
+                src="https://www.google.com/maps?q=64.93322143185365,25.56745163290246&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -257,7 +283,6 @@
             <a class="btn btn--primary btn--lg" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">
               Varaa aika <span class="arrow" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost btn--lg" href="https://wa.me/358401234567" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
       </div>
