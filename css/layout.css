@@ -43,10 +43,11 @@
   transform: translate(-50%, -50%);
 }
 .nav__brand img {
-  height: 140px;
+  height: 120px;
   width: auto;
   display: block;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .nav__brand span em {
   font-family: var(--f-text);
@@ -107,7 +108,7 @@
   padding: var(--s-2) 0;
   border-bottom: 1px solid var(--c-line);
 }
-.nav__menu .btn { justify-self: start; margin-top: var(--s-3); }
+.nav__menu .btn { justify-self: start; margin-top: var(--s-3); padding: 7px 20px 7px 20px;}
 
 @media (min-width: 900px) {
   .nav__toggle { display: none; }
