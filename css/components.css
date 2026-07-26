@@ -225,31 +225,52 @@
   font-style: italic;
   color: var(--c-sienna);
 }
-.hours {
+/* Booking by appointment — replaces the fixed opening-hours list */
+.booking-note {
+  font-style: italic;
+  color: var(--c-mute);
+  font-size: var(--fs-lead);
+}
+.booking-steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: var(--s-2);
 }
-.hours li {
+.booking-steps li {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--s-3);
-  padding: 10px 0;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-4);
+  padding: var(--s-3) 0;
   border-bottom: 1px dashed var(--c-line);
-  font-size: 15px;
 }
-.hours li:last-child { border-bottom: none; }
-.hours .day {
+.booking-steps li:last-child { border-bottom: none; }
+.booking-steps__num {
   font-family: var(--f-display);
   font-size: 12px;
   letter-spacing: 0.18em;
+  color: var(--c-sienna);
+  font-variant-numeric: tabular-nums;
+  padding-top: 3px;
+  width: 2.4em;
+}
+.booking-steps h4 {
+  font-family: var(--f-display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--c-mute);
+  margin-bottom: 6px;
 }
-.hours .time { font-variant-numeric: tabular-nums; color: var(--c-ink); }
-.hours .time.closed { color: var(--c-mute); font-style: italic; }
+.booking-steps p { font-size: 15px; }
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+}
 
 .address {
   font-style: normal;
@@ -638,12 +659,15 @@
   }
   .visit__block h3 em { color: var(--c-sienna); }
   .visit__block .meta { text-align: center; }
-  .hours {
+  .booking-note { margin-inline: auto; max-width: 34ch; }
+  .booking-steps {
     width: 100%;
     max-width: 22rem;
     margin-inline: auto;
   }
-  .hours li { text-align: left; }
+  .booking-steps li { text-align: left; }
+  .booking-actions { justify-content: center; width: 100%; }
+  .booking-actions .btn { flex: 1 1 100%; justify-content: center; }
   .address {
     text-align: center;
     line-height: 1.7;
