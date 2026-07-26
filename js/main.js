@@ -20,9 +20,11 @@
       menu.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
+      // The icons are <svg>, and SVG elements have no .hidden property —
+      // assigning to it would only create a JS expando. Toggle the attribute.
       if (iconOpen && iconClose) {
-        iconOpen.hidden = open;
-        iconClose.hidden = !open;
+        iconOpen.toggleAttribute('hidden', open);
+        iconClose.toggleAttribute('hidden', !open);
       }
     };
 
@@ -51,7 +53,10 @@
         menu.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-        if (iconOpen && iconClose) { iconOpen.hidden = false; iconClose.hidden = true; }
+        if (iconOpen && iconClose) {
+          iconOpen.removeAttribute('hidden');
+          iconClose.setAttribute('hidden', '');
+        }
       }
     });
   }

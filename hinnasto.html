@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f0e6" />
+  <title>Hinnasto — COTO Hair · Kotikampaamo Kempeleessä</title>
+  <meta name="description" content="COTO Hairin hinnasto: hiustenleikkaukset, värjäykset, vaalennukset ja raidoitukset, permanentti, kampaukset, hiushoidot sekä ripset ja kulmat. Kotikampaamo Kempeleen Linnakankaalla." />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Siirry sisältöön</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="index.html" aria-label="Coto Hair etusivu">
+        <img src="assets/coto-hair-logo-copper.svg" alt="Coto Hair" />
+      </a>
+
+      <button class="nav__toggle"
+              type="button"
+              data-nav-toggle
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              aria-label="Avaa valikko">
+        <svg data-icon-open viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="4" y1="8" x2="20" y2="8"/>
+          <line x1="4" y1="16" x2="20" y2="16"/>
+        </svg>
+        <svg data-icon-close viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" hidden>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+          <line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="nav__menu" id="primary-nav" data-nav-menu aria-label="Päävalikko">
+        <a href="index.html#about">Tervetuloa</a>
+        <a href="index.html#services">Palvelut</a>
+        <a href="hinnasto.html" aria-current="page">Hinnasto</a>
+        <a href="index.html#visit">Sijainti</a>
+        <a href="index.html#contact">Yhteystiedot</a>
+        <a class="btn btn--primary btn--sm" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">Varaa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== PAGE HEAD ===================== -->
+    <section class="section section--tight" id="hinnasto">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__num">Hinnasto</p>
+          <div>
+            <h2 class="section__title">COTOn <em class="italic">hinnasto</em>.</h2>
+            <p class="section__desc">
+              Jokaiseen aikaan kuuluu konsultaatio ja aikaa jutella. Ei yllätyksiä.
+              Värit ja vaalennukset hinnoitellaan hiusten mitan mukaan.
+            </p>
+          </div>
+        </header>
+
+        <div class="pricelist">
+
+          <!-- ---------- Hiustenleikkaukset ---------- -->
+          <section class="price-group reveal" aria-labelledby="cuts">
+            <h3 class="price-group__title" id="cuts"><em>Hiustenleikkaukset</em></h3>
+            <p class="price-group__intro">
+              Leikkausten hintaan sisältyy rentouttava pesu hiuspohjan hieronnalla hierovassa
+              pesupaikassa (poikkeuksena lasten leikkaus, tasausleikkaus ja siistimisleikkaus).
+            </p>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Parturityö</span>
+                <span class="price-row__price">38 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Kampaamoleikkaus</span>
+                <span class="price-row__price">57 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Mallinmuutosleikkaus</span>
+                <span class="price-row__price">75 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Lasten hiustenleikkaus</span>
+                <span class="price-row__note">alle 7-vuotiaat</span>
+                <span class="price-row__price">33 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Tasausleikkaus</span>
+                <span class="price-row__note">muutamassa osiossa</span>
+                <span class="price-row__price">39 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Siistimisleikkaus</span>
+                <span class="price-row__note">koneajo, hiusrajat</span>
+                <span class="price-row__price">25 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Otsahiustenleikkaus</span>
+                <span class="price-row__price">20 €</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Värjäykset ---------- -->
+          <section class="price-group reveal" aria-labelledby="colour">
+            <h3 class="price-group__title" id="colour"><em>Värjäykset</em></h3>
+            <p class="price-group__intro">
+              Hinnat hiusten mitan mukaan: lyhyet / keskipitkät / pitkät / extrapitkät.
+            </p>
+
+            <div class="price-rows">
+              <div class="price-legend" aria-hidden="true">
+                <span></span>
+                <span class="price-cells">
+                  <span>Lyhyet</span>
+                  <span>Keskip.</span>
+                  <span>Pitkät</span>
+                  <span>Extrap.</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Väri ja leikkaus</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">138 €</span>
+                  <span data-len="Keskipitkät">152 €</span>
+                  <span data-len="Pitkät">162 €</span>
+                  <span data-len="Extrapitkät">189 €</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Väri</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">102 €</span>
+                  <span data-len="Keskipitkät">114 €</span>
+                  <span data-len="Pitkät">125 €</span>
+                  <span data-len="Extrapitkät">154 €</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Sävytys pesupaikalla tehtynä</span>
+                <span class="price-row__note">leikkauksen yhteydessä</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">43 €</span>
+                  <span data-len="Keskipitkät">56 €</span>
+                  <span data-len="Pitkät">68 €</span>
+                  <span data-len="Extrapitkät">80 €</span>
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Vaalennukset / Raidoitukset ---------- -->
+          <section class="price-group reveal" aria-labelledby="blonde">
+            <h3 class="price-group__title" id="blonde">Vaalennukset &amp; <em>raidoitukset</em></h3>
+            <p class="price-group__intro">
+              Hinnat hiusten mitan mukaan: lyhyet / keskipitkät / pitkät / extrapitkät.
+            </p>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Leikkaus vaalennuksen tai raidoituksen yhteydessä</span>
+                <span class="price-row__price">38 €</span>
+              </div>
+
+              <div class="price-legend" aria-hidden="true">
+                <span></span>
+                <span class="price-cells">
+                  <span>Lyhyet</span>
+                  <span>Keskip.</span>
+                  <span>Pitkät</span>
+                  <span>Extrap.</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Tyvivaalennus ja sävytys</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">117 €</span>
+                  <span data-len="Keskipitkät">156 €</span>
+                  <span data-len="Pitkät">170 €</span>
+                  <span data-len="Extrapitkät">179 €</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Vaalennus ja sävytys</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">165 €</span>
+                  <span data-len="Keskipitkät">199 €</span>
+                  <span data-len="Pitkät">228 €</span>
+                  <span data-len="Extrapitkät">247 €</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Raidoitus</span>
+                <span class="price-row__note">foliointi, balayage ja muut erikoistekniikat</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">132 €</span>
+                  <span data-len="Keskipitkät">170 €</span>
+                  <span data-len="Pitkät">184 €</span>
+                  <span data-len="Extrapitkät">193 €</span>
+                </span>
+              </div>
+
+              <div class="price-row price-row--lengths">
+                <span class="price-row__name">Osaraidoitus</span>
+                <span class="price-row__note">päälliosa tai hiusrajat</span>
+                <span class="price-cells">
+                  <span data-len="Lyhyet">122 €</span>
+                  <span data-len="Keskipitkät">132 €</span>
+                  <span data-len="Pitkät">141 €</span>
+                  <span data-len="Extrapitkät">151 €</span>
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Permanentti ---------- -->
+          <section class="price-group reveal" aria-labelledby="perm">
+            <h3 class="price-group__title" id="perm"><em>Permanentti</em></h3>
+            <p class="price-group__intro">
+              Hinnat hiusten mitan mukaan: lyhyet / puolipitkät.
+            </p>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Leikkaus permanentin yhteydessä</span>
+                <span class="price-row__price">38 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Permanentti</span>
+                <span class="price-row__note">lyhyet / puolipitkät</span>
+                <span class="price-row__price">130 / 150 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Osakihara</span>
+                <span class="price-row__note">enintään 15 rullaa</span>
+                <span class="price-row__price">80 €</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Kampaukset ---------- -->
+          <section class="price-group reveal" aria-labelledby="styling">
+            <h3 class="price-group__title" id="styling"><em>Kampaukset</em></h3>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Pesu &amp; föönaus</span>
+                <span class="price-row__price">49 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Kampaus</span>
+                <span class="price-row__note">ei pesua</span>
+                <span class="price-row__price">98 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Hääkampaus</span>
+                <span class="price-row__note">sisältää suunnittelun</span>
+                <span class="price-row__price">156 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Vanhojentanssi- tai muu juhlakampaus</span>
+                <span class="price-row__note">ennen klo 8.00</span>
+                <span class="price-row__price">114 €</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Hiushoidot ---------- -->
+          <section class="price-group reveal" aria-labelledby="treatments">
+            <h3 class="price-group__title" id="treatments"><em>Hiushoidot</em></h3>
+            <p class="price-group__intro">
+              Hetki hemmottelua hiuksillesi ja mielellesi hierovalla pesupaikalla.
+              Hinta leikkauksen tai värin yhteydessä / pelkkä hoito hiusten viimeistelyllä.
+            </p>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Hiusta korjaava, kosteuttava tai tuuheuttava hoito</span>
+                <span class="price-row__note">hoidon yhteydessä / erikseen</span>
+                <span class="price-row__price">19 / 38 €</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Ripset / Kulmat ---------- -->
+          <section class="price-group reveal" aria-labelledby="lashes">
+            <h3 class="price-group__title" id="lashes">Ripset &amp; <em>kulmat</em></h3>
+
+            <div class="price-rows">
+              <div class="price-row">
+                <span class="price-row__name">Kestoväri ripsiin ja kulmiin</span>
+                <span class="price-row__price">32 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Kestoväri ripsiin tai kulmiin</span>
+                <span class="price-row__price">24 €</span>
+              </div>
+              <div class="price-row">
+                <span class="price-row__name">Kulmien muotoilu</span>
+                <span class="price-row__price">19 €</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ---------- Fine print ---------- -->
+          <aside class="price-note reveal">
+            <h3>Hyvä tietää</h3>
+            <p>
+              Varaa sinulle sopiva aika
+              <a href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">Timma-palvelun</a>
+              kautta tai soita minulle <a href="tel:+358500211073">+358 50 021 1073</a>,
+              niin katsotaan yhdessä sinulle sopiva aika.
+            </p>
+            <p>
+              Huomaathan, että peruuttamatta jätetyistä ajoista tai saman päivän aikana
+              perutuista ajoista veloitan 50 % työn hinnasta.
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section section--tight" id="book">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Varaa aika, kun <em>sinulle</em> sopii.</h2>
+            <p>Ajanvaraus onnistuu verkossa hetkessä. Saat vahvistuksen sekä lempeän muistutuksen edellisenä päivänä.</p>
+          </div>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--lg" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">
+              Varaa aika
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h6>Käy paikan päällä</h6>
+          <p class="meta">Kotikampaamo<br/>Linnakangas<br/>Kempele</p>
+        </div>
+        <div class="footer__col">
+          <h6>Ota yhteyttä</h6>
+          <a href="tel:+358500211073">+358 50 021 1073</a>
+          <a href="mailto:minna@cotohair.fi">minna@cotohair.fi</a>
+        </div>
+        <div class="footer__col">
+          <h6>Seuraa</h6>
+          <a href="https://instagram.com/cotohair" target="_blank" rel="noopener">Instagram · @cotohair</a>
+        </div>
+      </div>
+
+      <div class="footer__signature">
+        <span>© <span data-year>2026</span> · COTO Hair Kempele</span>
+        <span>Tehty hiljaa Kempeleessä</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

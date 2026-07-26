@@ -21,6 +21,10 @@ body {
 
 img, svg { max-width: 100%; display: block; }
 
+/* `hidden` must outrank the element rules above — otherwise the nav's
+   close icon stays visible next to the hamburger. */
+[hidden] { display: none !important; }
+
 a {
   color: var(--c-ink);
   text-decoration: none;
