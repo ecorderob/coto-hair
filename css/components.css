@@ -609,6 +609,21 @@
     text-transform: none;
   }
 
+  /* Increase mobile reading size while keeping labels compact */
+  .stylist__bio,
+  .price-group__intro,
+  .price-note p,
+  .address {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .stylist__bio { max-width: 38ch; }
+  .booking-note { max-width: 38ch; }
+  .price-row__note { font-size: 14px; }
+  .price-row__name,
+  .price-row__price { font-size: 18px; }
+  .price-cells span { font-size: 17px; }
+
   /* Price groups flatten into plain lists, like the services list */
   .price-group {
     background: transparent;
@@ -638,7 +653,7 @@
     margin-inline: auto;
   }
   .stylist__avatar { margin: 0 auto var(--s-2); }
-  .stylist__bio { max-width: 32ch; margin-inline: auto; }
+  .stylist__bio { max-width: 38ch; margin-inline: auto; }
   .stylist__tags { justify-content: center; }
 
   /* Visit blocks — borderless, centered, hairline divider between */
@@ -659,7 +674,7 @@
   }
   .visit__block h3 em { color: var(--c-sienna); }
   .visit__block .meta { text-align: center; }
-  .booking-note { margin-inline: auto; max-width: 34ch; }
+  .booking-note { margin-inline: auto; max-width: 38ch; }
   .booking-steps {
     width: 100%;
     max-width: 22rem;
