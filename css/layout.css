@@ -398,7 +398,7 @@
    Mobile (< 900px) — centered editorial layout
    Mirrors the BestOption.html composition: everything aligns
    to the page axis, section labels sit above titles, and the
-   hero loses its visual card for a quiet, typographic open.
+   hero uses a visible salon photo with a lower-third title.
    ========================================================= */
 @media (max-width: 899px) {
 
@@ -431,21 +431,28 @@
   .section__title em { font-style: italic; color: var(--c-sienna); }
   .section__desc { font-style: normal; color: var(--c-mute); }
 
-  /* Hero — photo backdrop with warm dark scrim, centered light text */
+  /* Hero — visible photo, lower-third title, copy below the image */
   .hero {
-    padding-top: clamp(var(--s-7), 14vh, var(--s-9));
+    padding-top: 0;
     padding-bottom: var(--s-8);
-    min-height: 88vh;
-    min-height: 88dvh;
-    color: var(--c-paper);
+    min-height: auto;
+    color: var(--c-ink);
+    background: var(--c-paper);
   }
-  .hero__inner { text-align: center; gap: var(--s-5); }
-  .hero__copy {
+  .hero__inner {
     display: grid;
-    justify-items: center;
-    gap: var(--s-4);
-    position: relative;
-    z-index: 2;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "lead"
+      "actions"
+      "meta";
+    text-align: center;
+    gap: 0;
+    padding-inline: 0;
+  }
+  .hero__copy {
+    display: contents;
   }
   .hero__eyebrow {
     font-family: var(--f-display);
@@ -458,6 +465,11 @@
     border-radius: var(--r-pill);
   }
   .hero__title {
+    grid-area: photo;
+    align-self: end;
+    justify-self: stretch;
+    z-index: 2;
+    margin: 0 var(--gutter) calc(var(--s-5) + var(--s-6));
     font-family: var(--f-display);
     font-style: normal;
     font-weight: 300;
@@ -474,59 +486,76 @@
   .hero__title br { display: none; }
   .hero__title .hero__word { display: block; }
   .hero__lead {
+    grid-area: lead;
+    justify-self: center;
+    width: min(34ch, calc(100% - (2 * var(--gutter))));
     font-family: var(--f-text);
     font-size: clamp(18px, 4.8vw, 20px);
-    color: var(--c-mute);
+    color: var(--c-ink);
     max-width: 34ch;
-    margin-inline: auto;
+    margin: var(--s-7) auto 0;
     line-height: 1.55;
   }
-  .hero__actions { justify-content: center; }
+  .hero__actions {
+    grid-area: actions;
+    justify-content: center;
+    margin: var(--s-2) var(--gutter) 0;
+  }
   .hero__meta {
-    margin-inline: auto;
-    width: 100%;
+    grid-area: meta;
+    justify-self: center;
+    margin: var(--s-4) auto 0;
+    width: min(34ch, calc(100% - (2 * var(--gutter))));
     max-width: 34ch;
     text-align: left;
+    color: var(--c-mute);
+    border-top-color: var(--c-line);
     font-size: 13px;
     letter-spacing: 0.12em;
   }
   .hero__visual {
     display: block;
-    position: absolute;
-    inset: 0;
+    grid-area: photo;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(390px, 62svh, 520px);
     aspect-ratio: auto;
     border-radius: 0;
     box-shadow: none;
     z-index: 0;
   }
-  .hero__visual img { object-position: center 35%; }
+  .hero__visual img { object-position: center 72%; }
   .hero__visual::before {
     content: "";
     position: absolute; inset: 0;
     background:
       linear-gradient(180deg,
-        rgba(28, 22, 18, 0.66) 0%,
-        rgba(28, 22, 18, 0.58) 22%,
-        rgba(28, 22, 18, 0.62) 55%,
-        rgba(28, 22, 18, 0.88) 100%);
+        rgba(28, 22, 18, 0) 0%,
+        rgba(28, 22, 18, 0) 58%,
+        rgba(28, 22, 18, 0.14) 68%,
+        rgba(28, 22, 18, 0.58) 84%,
+        rgba(28, 22, 18, 0.82) 100%);
     z-index: 1;
     pointer-events: none;
   }
   .hero__visual::after { opacity: 0.18; }
   .hero__visual .tag-float { display: none; }
 
-  /* Text inverted for legibility on the photo */
+  /* Only the title is inverted because it sits on the photo */
   .hero__title { color: var(--c-paper); }
   .hero__title em { color: var(--c-peach); }
-  .hero__lead { color: rgba(245, 240, 230, 0.92); }
-  .hero .rule { border-color: rgba(245, 240, 230, 0.35); }
-  .hero__meta {
-    color: rgba(245, 240, 230, 0.7);
-    border-top-color: rgba(245, 240, 230, 0.22);
+  .hero .rule {
+    grid-area: photo;
+    align-self: end;
+    justify-self: center;
+    z-index: 2;
+    margin: 0 auto var(--s-5);
+    background: var(--c-sienna);
   }
-  .hero__meta dt { color: rgba(245, 240, 230, 0.6); }
-  .hero__meta dd { color: var(--c-paper); }
-  .hero__meta a { color: var(--c-peach); }
+  .hero__meta dt { color: var(--c-mute); }
+  .hero__meta dd { color: var(--c-ink); }
+  .hero__meta a { color: var(--c-sienna); }
 
   /* Section dividers feel lighter when content is centered */
   .section + .section { border-top: none; }
