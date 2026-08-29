@@ -180,6 +180,9 @@
     max-width: none;
   }
   .section__title { font-size: var(--fs-h3); }
+  /* The hero isn't a .section, so it misses the divider rule above.
+     On mobile it's a full-bleed photo hero where a hairline would read as an edge. */
+  .hero + .section { border-top: 1px solid var(--c-line); }
 }
 
 /* ========== Hero ========== */
