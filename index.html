@@ -4,96 +4,283 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f5f0e6" />
-  <title>COTO Hair — Uudet sivut avautuvat pian · Kempele</title>
-  <meta name="description" content="COTO Hair, kotoisa kampaamo Kempeleessä. Uudet verkkosivut avautuvat pian." />
+  <title>COTO Hair — Kotoisa kampaamo, kiireetön kohtaaminen · Kempele</title>
+  <meta name="description" content="COTO on kotoisa parturi-kampaamo Kempeleessä. Kokenut kampaaja Minna Tilikainen ottaa sinut vastaan kiireettömässä ympäristössä — sinä olet keskiössä. Varaa aika verkossa." />
 
   <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
-
-  <style>
-    .soon {
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: var(--s-8) var(--gutter);
-      gap: var(--s-5);
-    }
-    .soon__logo { width: clamp(180px, 40vw, 280px); height: auto; }
-    .soon__rule {
-      width: 56px;
-      height: 1px;
-      background: var(--c-sienna);
-      border: 0;
-      margin: var(--s-2) 0;
-    }
-    .soon__eyebrow {
-      font-family: var(--f-display);
-      font-size: var(--fs-eyebrow);
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--c-sienna);
-      margin: 0;
-    }
-    .soon__title {
-      font-family: var(--f-display);
-      font-weight: 300;
-      font-size: var(--fs-h2);
-      line-height: 1.1;
-      letter-spacing: 0.02em;
-      margin: 0;
-    }
-    .soon__title em {
-      font-family: var(--f-text);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--c-sienna);
-    }
-    .soon__lead {
-      font-size: var(--fs-lead);
-      color: var(--c-mute);
-      max-width: 34em;
-      margin: 0;
-    }
-    .soon__contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--s-3) var(--s-6);
-      font-family: var(--f-display);
-      font-size: var(--fs-meta);
-      letter-spacing: 0.08em;
-    }
-    .soon__contact a { border-bottom: 1px solid var(--c-line-strong); padding-bottom: 2px; }
-    .soon__contact a:hover { border-color: var(--c-sienna); }
-    .soon__foot {
-      font-family: var(--f-display);
-      font-size: var(--fs-meta);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--c-mute);
-      margin: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
 </head>
 <body>
-  <main class="soon" id="main">
-    <img class="soon__logo" src="assets/coto-hair-logo-copper.svg" alt="Coto Hair" />
-    <hr class="soon__rule" />
-    <p class="soon__eyebrow">Kotikampaamo · Kempele</p>
-    <h1 class="soon__title">Uudet sivut <em>avautuvat pian.</em></h1>
-    <p class="soon__lead">
-      Valmistelemme COTO Hairin uusia verkkosivuja. Palaa pian takaisin,
-      tai ota yhteyttä suoraan, niin sovitaan aika.
-    </p>
-    <div class="soon__contact">
+  <a class="skip-link" href="#main">Siirry sisältöön</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Coto Hair etusivu">
+        <img src="assets/coto-hair-logo-copper.svg" alt="Coto Hair" />
+      </a>
+
+      <button class="nav__toggle"
+              type="button"
+              data-nav-toggle
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              aria-label="Avaa valikko">
+        <svg data-icon-open viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="4" y1="8" x2="20" y2="8"/>
+          <line x1="4" y1="16" x2="20" y2="16"/>
+        </svg>
+        <svg data-icon-close viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" hidden>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+          <line x1="18" y1="6" x2="6" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="nav__menu" id="primary-nav" data-nav-menu aria-label="Päävalikko">
+        <a href="#about">Tervetuloa</a>
+        <a href="#services">Palvelut</a>
+        <a href="hinnasto.html">Hinnasto</a>
+        <a href="#visit">Sijainti</a>
+        <a href="#contact">Yhteystiedot</a>
+        <a class="btn btn--primary btn--sm" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">Varaa</a>
+      </nav>
     </div>
-    <p class="soon__foot">Tervetuloa kotiin</p>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title reveal delay-1">
+            <span class="hero__word">Kotoisa</span> <span class="hero__word">kampaamo</span><br/><span class="hero__word"><em>lämmin</em></span> <span class="hero__word">kohtaaminen</span>
+          </h1>
+
+          <hr class="rule rule--left reveal delay-2" />
+
+          <p class="hero__lead reveal delay-2">
+            COTO on pitkäaikainen unelmani – lämmin kotikampaamo Kempeleessä Linnakankaalla.
+            Sijaitsee kotimme toisessa kerroksessa.
+            Anna arjen jäädä hetkeksi oven ulkopuolelle - sinä olet keskiössä.
+          </p>
+
+          <div class="hero__actions reveal delay-3">
+            <a class="btn btn--primary btn--lg" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">
+              Varaa aika
+            </a>
+          </div>
+
+          <div class="hero__meta reveal delay-4">
+            <dl>
+              <dt>Studio</dt><dd>Kotikampaamo · Linnakangas · Kempele</dd>
+              <dt>Aukiolo</dt><dd>Sopimuksen mukaan</dd>
+              <dt>Puhelin</dt><dd><a href="tel:+358500211073">+358 50 021 1073</a></dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal delay-2">
+          <picture>
+            <source media="(max-width: 899px)" srcset="assets/Hero.png" width="2348" height="3526" />
+            <img src="assets/Salon3.png"
+                 alt="COTO Hairin sisätila: pesupaikka, kampausistuin ja iso ikkuna, josta näkyy Kempeleen pientaloalue."
+                 width="1086" height="1448" />
+          </picture>
+          <span class="tag-float" aria-hidden="true"><span class="dot"></span>Hetki omaa aikaa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT (solo owner) ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__num">Tervetuloa</p>
+          <div>
+            <h2 class="section__title">Olen Minna, ja COTO on <em class="italic">unelmani</em>.</h2>
+            <p class="section__desc">
+              Kokenut parturi-kampaaja yrittäjänä jo vuodesta 2001.
+              Yksilöllistä ja ammattitaitoista palvelua -
+              aina sinun tyyliäsi ja toiveitasi kuunnellen.
+            </p>
+          </div>
+        </header>
+
+        <div class="stylists">
+          <article class="stylist reveal">
+            <div class="stylist__avatar">
+              <img src="assets/Minna.jpg"
+                   alt="Minna Tilikainen, COTO Hairin parturi-kampaaja."
+                   width="1402" height="2048" loading="lazy" />
+            </div>
+            <div class="stylist__body">
+              <p class="stylist__role">Perustaja · Parturi-kampaaja</p>
+              <h3 class="stylist__name">Minna Tilikainen</h3>
+              <p class="stylist__bio">
+                Haen inspiraatiota jokapäiväisestä elämästä ja esteetikkona löydän kauneutta
+                pienistäkin arjen asioista. Toteutan hiukset asiakkaan elämäntapaa ja persoonallisuutta
+                kunnioittaen — luonnollisuus ja kaunis lopputulos ovat minulle tärkeitä.
+              </p>
+              <p class="stylist__bio">
+                Minulle hyvä kampaamokäynti syntyy
+                kuuntelemisesta, ammattitaidosta ja
+                aidosta kohtaamisesta.
+                Haluan, että Coton on aina mukava tulla.
+              </p>
+              <p class="stylist__signoff">Love, <em>Minna</em></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__num">Palvelut</p>
+          <div>
+            <h2 class="section__title">Kaikki, mitä hiuksesi <em class="italic">tarvitsevat</em>.</h2>
+            <p class="section__desc">
+              Jokainen käynti alkaa sinun hiuksistasi ja toiveistasi.
+              Suunnittelen yhdessä juuri sinulle
+              sopivan kokonaisuuden
+              hinnat löytyvät selkeästi hinnastosta.
+
+
+            </p>
+          </div>
+        </header>
+
+        <div class="section__cta reveal">
+          <a class="btn btn--outline btn--lg" href="hinnasto.html">
+            Katso koko hinnasto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EDITORIAL BAND ===================== -->
+    <aside class="editorial-band reveal" aria-hidden="true">
+      <img src="assets/Waiting2.jpg"
+           alt=""
+           width="3024" height="4032" loading="lazy" />
+      <blockquote class="editorial-band__quote">
+        Halusin luoda paikan, jossa voin keskittyä sinuun ja hiuksiisi <em>yhteen asiakkaaseen kerrallaan.</em>
+      </blockquote>
+    </aside>
+
+    <!-- ===================== VISIT (BOOKING + LOCATION) ===================== -->
+    <section class="section section--tight" id="visit">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__num">Sijainti &amp; ajanvaraus</p>
+          <div>
+            <h2 class="section__title">Kotikampaamo <em class="italic">Kempeleessä</em>.</h2>
+            <p class="section__desc">
+              Astu sisään ja hengähdä hetkeksi. Koko perhe on lämpimästi
+              tervetullut COTOon.
+            </p>
+          </div>
+        </header>
+
+        <div class="visit">
+          <div class="visit__block reveal">
+            <h3>Ajat <em>sopimuksen mukaan</em></h3>
+            <p class="booking-note">
+              Varaa aikasi helposti verkossa silloin kun sinulle sopii.<br/>
+              Jos et löydä sopivaa aikaa tai haluat kysyä jotain, voit aina soittaa minulle.
+            </p>
+
+            <div class="booking-actions">
+              <a class="btn btn--primary" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">Varaa verkossa</a>
+              <a class="btn btn--outline" href="tel:+358500211073">Soita +358 50 021 1073</a>
+            </div>
+
+            <p class="meta">Yksi asiakas kerrallaan · Henkilökohtaista palvelua</p>
+          </div>
+
+          <div class="visit__block reveal delay-1">
+            <h3>Löydä <em>luokseni</em></h3>
+            <address class="address">
+              <strong>COTO Hair</strong><br/>
+              Kotikampaamo · Kempele<br/>
+              Keisarinkurvi 20<br/>
+              Etsi tumma talo numero 20 — pihalla <em>coto</em>-kyltti.<br/>
+              <a href="tel:+358500211073">+358 50 021 1073</a> ·
+              <a href="mailto:minna@cotohair.fi">minna@cotohair.fi</a>
+            </address>
+            <figure class="location-photo">
+              <img src="assets/House2.png"
+                   alt="COTO Hair -kotikampaamon ulkokuva: tumma talo, jonka pihalla coto-kyltti."
+                   width="1330" height="1183" loading="lazy" />
+            </figure>
+
+            <div class="location-map">
+              <iframe
+                title="Kartta: COTO Hair Kempeleessä"
+                src="https://www.google.com/maps?q=64.93322143185365,25.56745163290246&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section section--tight" id="book">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Varaa aika, kun <em>sinulle</em> sopii.</h2>
+            <p>Ajanvaraus onnistuu verkossa hetkessä. Saat vahvistuksen sekä lempeän muistutuksen edellisenä päivänä.</p>
+          </div>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--lg" href="https://varaa.timma.fi/cotohair" target="_blank" rel="noopener">
+              Varaa aika
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__inner">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h6>Käy paikan päällä</h6>
+          <p class="meta">Kotikampaamo<br/>Linnakangas<br/>Kempele</p>
+        </div>
+        <div class="footer__col">
+          <h6>Ota yhteyttä</h6>
+          <a href="tel:+358500211073">+358 50 021 1073</a>
+          <a href="mailto:minna@cotohair.fi">minna@cotohair.fi</a>
+        </div>
+        <div class="footer__col">
+          <h6>Seuraa</h6>
+          <a href="https://instagram.com/cotohair" target="_blank" rel="noopener">Instagram · @cotohair</a>
+        </div>
+      </div>
+
+      <div class="footer__signature">
+        <span>© <span data-year>2026</span> · COTO Hair Kempele</span>
+        <span>Pieni kampaamo suurella sydämellä</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
