@@ -379,6 +379,12 @@
   font-weight: 500;
 }
 .footer__col a { display: block; padding: 4px 0; color: var(--c-ink); }
+.footer__col .social-link {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.social-link svg { width: 18px; height: 18px; flex: none; }
 .footer__signature {
   display: flex;
   justify-content: space-between;
@@ -564,6 +570,7 @@
   /* Footer — centered stack with single accent rule */
   .footer__cols { text-align: center; gap: var(--s-5); }
   .footer__col a { padding: 2px 0; }
+  .footer__col .social-link { justify-content: center; }
   .footer__signature {
     justify-content: center;
     text-align: center;
